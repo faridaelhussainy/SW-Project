@@ -1,0 +1,192 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f4f4f9, #e0f7fa);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+        }
+
+        .left-section {
+            flex: 1;
+            background: linear-gradient(120deg, #3f51b5, #2196f3);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .left-section img {
+            max-width: 80%;
+            border-radius: 10px;
+        }
+
+        .left-section h1 {
+            font-size: 2.5em;
+            margin: 20px 0 10px;
+        }
+
+        .left-section p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #ffffff;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2196f3;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #2196f3;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <img src="c:\Users\hp\OneDrive\Desktop\projectSW\loginbackground.png" alt="Healthcare Image">
+            <h1>Welcome to our Clinic</h1>
+            <p>Providing accessible healthcare solutions for everyone!</p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="form-container">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <div class="error-message" id="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user inputs
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+        
+            // Example username and password
+            const validUsername = 'admin';
+            const validPassword = '1234';
+           
+
+            // Error message element
+            const errorMessage = document.getElementById('error-message');
+
+            // Check if username and password match
+            if (username === validUsername && password === validPassword) {
+                // Redirect to dashboard page
+                window.location.href = 'dashboard.html';
+            } else {
+                // Show error message
+                errorMessage.textContent = 'Invalid Username or Password. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Appointment Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .sidebar .menu a:hover {
+            background-color: #34495e;
+        }
+
+        .sidebar .footer {
+            position: absolute;
+            bottom: 20px;
+            width: calc(100% - 40px);
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            margin-left: 240px; /* Adjust for sidebar width */
+            width: calc(100% - 260px);
+            max-width: 1400px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f7f7f7;
+            color: #555;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 14px;
+            color: white;
+            background-color: #0a6d9e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #0a6d9e;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container {
+            margin: 30px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <div class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="Calander.html">Calendar</a>
+            <a href="#">Patients</a>
+            <a href="#">Reviews</a>
+            
+        </div>
+        <div class="footer">© Clinic System</div>
+    </div>
+
+    <div class="container">
+        <h1>Clinic Appointment Schedule</h1>
+
+        <div class="form-container">
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="patient-name">Patient Name:</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-name">Doctor:</label>
+                    <select id="doctor-name" name="doctor-name" required>
+                        <option value="">Select Doctor</option>
+                        <option value="Dr.Ahmed">Dr. Ahmed/option>
+                        <option value="Dr. Mohamed">Dr. Mohamed</option>
+                        <option value="Dr. Mahmoud">Dr. Mahmoud</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Date:</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Time:</label>
+                    <input type="time" id="appointment-time" name="appointment-time" required>
+                </div>
+                <button type="submit" class="btn">Add Appointment</button>
+            </form>
+        </div>
+
+        <table id="schedule-table">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('appointment-form');
+        const tableBody = document.querySelector('#schedule-table tbody');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const patientName = document.getElementById('patient-name').value;
+            const doctorName = document.getElementById('doctor-name').value;
+            const appointmentDate = document.getElementById('appointment-date').value;
+            const appointmentTime = document.getElementById('appointment-time').value;
+
+            // Create new row
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${patientName}</td>
+                <td>${doctorName}</td>
+                <td>${appointmentDate}</td>
+                <td>${appointmentTime}</td>
+                <td><button class="btn btn-delete">Delete</button></td>
+            `;
+
+            // Append row to table
+            tableBody.appendChild(row);
+
+            // Clear form fields
+            form.reset();
+
+            // Add delete functionality
+            row.querySelector('.btn-delete').addEventListener('click', () => {
+                row.remove();
+            });
+        });
+    </script>
+</body>
+</html>

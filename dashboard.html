@@ -1,0 +1,288 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            height: 100vh;
+            background: #f4f7fc;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #0a6d9e;
+            color: #fff;
+            width: 220px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 40px;
+        }
+
+        .menu a {
+            display: block;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            color: #f4f7fc;
+            font-weight: bold;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .widgets {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .widget {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .widget:last-child {
+            margin-right: 0;
+        }
+
+        /* Requests Section */
+        .requests {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .requests h3 {
+            margin-bottom: 10px;
+        }
+
+        .request-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        /* Calendar Section */
+        .calendar {
+            width: 300px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            height: fit-content;
+        }
+
+        .calendar h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .calendar table th,
+        .calendar table td {
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+
+        .calendar .today {
+            background: #0a6d9e;
+            color: #fff;
+            border-radius: 50%;
+        }
+
+        /* Hover Effect for Calendar Days */
+        .calendar table td:hover {
+            background: #0a6d9e; /* Green background on hover */
+            color: #fff; /* White text color */
+            cursor: pointer; /* Change cursor to pointer */
+            border-radius: 50%; /* Circular hover effect */
+            transition: background 0.3s ease; /* Smooth transition */
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <div class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="Calander.html">Calendar</a>
+            <a href="#">Patients</a>
+            <a href="#">Reviews</a>
+            
+        </div>
+        <div class="footer">© Clinic System</div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div>
+                    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
+                    <h2>Good Morning Doctor <i class="fas fa-heart" style="color: #0a6d9e;"></i></h2>
+                    <p>You have <strong>12 Patients</strong> today</p>
+                </div>
+                <div>
+                    <img src="C:\Users\hp\OneDrive\Desktop\projectSW\dashboardlogo.png" alt="Doctor" style="border-radius: 50%;">
+                </div>
+            </div>
+
+            <!-- Widgets -->
+            <div class="widgets">
+                <div class="widget">
+                    <h3>Patients</h3>
+                    <p>New: 45 | Old: 30</p>
+                </div>
+                <div class="widget">
+                    <h3>Visits</h3>
+                    <p>Appointments: 60 | Cancelled: 5</p>
+                </div>
+            </div>
+
+            <!-- Requests Section -->
+            <div class="requests">
+                <h3>Requests</h3>
+                <div class="request-item">
+                    <p><strong>Donia El Malky</strong> - Emergency Case - 10:00 AM</p>
+                </div>
+                <div class="request-item">
+                    <p><strong>Mourad Ahmed</strong> - Consultation - 10:30 AM</p>
+                </div>
+                <div class="request-item">
+                    <p><strong>Riham Osama</strong> - Emergency Case - 11:00 AM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar">
+            <h3>December 2025</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td class="today">16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
