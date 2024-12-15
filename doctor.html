@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech Dashboard</title>
+    <link rel="stylesheet" href="doctor.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">MedTech</div>
+        <ul>
+            <li class="active"><i class="fa-solid fa-chart-line"></i> Overview</li>
+            <li><i class="fa-solid fa-calendar"></i> Appointments</li>
+            <li><i class="fa-solid fa-box"></i> Nurse</li>
+            <li><i class="fa-solid fa-user"></i> Patients</li>
+            <li><i class="fa-solid fa-gear"></i> calender</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h2>Welcome, Dr!</h2>
+            <p>Check the latest updates on your account</p>
+            <div class="summary">
+                <div><i class="fa-regular fa-calendar-check"></i> 28 / 45 Today's Appointments</div>
+                <div><i class="fa-regular fa-calendar-xmark"></i> 13 / 45 Canceled Appointments</div>
+                <div><i class="fa-solid fa-users"></i> 283 Total Patients</div>
+            </div>
+        </header>
+
+        <!-- Appointments -->
+        <div class="appointments">
+            <h3>Appointments</h3>
+            <div class="tabs">
+                <button class="active">Day</button>
+                <button>Week</button>
+                <button>Month</button>
+            </div>
+            <div class="appointment-list">
+                <div class="appointment">
+                    <div>10:00 - 10:30</div>
+                    <div>Howard Morrison (Cab. #123)</div>
+                    <div class="status complete">Complete</div>
+                </div>
+                <div class="appointment">
+                    <div>10:30 - 11:30</div>
+                    <div>Gerald Gregory (Cab. #123)</div>
+                    <div class="status complete">Complete</div>
+                </div>
+                <div class="appointment">
+                    <div>12:00 - 12:30</div>
+                    <div>Timmy Olson (Cab. #148)</div>
+                    <div class="status start">Start</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Card -->
+        <div class="patient-card">
+            <img src="https://via.placeholder.com/60" alt="Timmy Olson">
+            <h3>Timmy Olson</h3>
+            <p>St Audrey's Close, New Jersey 28333</p>
+            <div class="patient-details">
+                <p>D.O.B: <b>16 August, 1984</b></p>
+                <p>Height: <b>184 cm</b></p>
+                <p>Weight: <b>48 kg</b></p>
+                <p>Disease: <b>Asthma</b></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
