@@ -1,0 +1,90 @@
+ CSS Code (style.css) 
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f6f9;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.sidebar {
+    background-color: #1c4b6b;
+    color: #ffffff;
+    padding: 20px;
+    width: 200px;
+}
+.logo {
+    font-size: 2em;
+    text-align: center;
+}
+.menu {
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    margin: 20px 0;
+    cursor: pointer;
+}
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.patient-info {
+    display: flex;
+    gap: 20px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.patient-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+.metrics {
+    display: flex;
+    gap: 20px;
+}
+.metric {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.metric p {
+    margin: 0;
+    font-size: 1.5em;
+}
+.information ul {
+    list-style: none;
+    padding: 0;
+}
+.information li {
+    margin: 5px 0;
+}
+.prescriptions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.prescriptions th, .prescriptions td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.prescriptions th {
+    background-color: #f2f2f2;
+}
+

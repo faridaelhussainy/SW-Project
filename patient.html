@@ -1,0 +1,95 @@
+<!-- HTML Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Tool - Patient Page</title>
+    <link rel="stylesheet" href="patient.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">+</div>
+            <ul class="menu">
+                <li>Dashboard</li>
+                <li>Appointments</li>
+                <li>Patients</li>
+                <li>Prescriptions</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Current Appointment</h2>
+                <div class="doctor-info">
+                    <span>Dr. Alex Hess</span>
+                </div>
+            </header>
+            <section class="patient-info">
+                <div class="card">
+                    <img src="profile-placeholder.png" alt="Patient Photo" class="patient-photo">
+                    <div class="patient-details">
+                        <h3>Roger Curtis</h3>
+                        <p>Age: 36</p>
+                        <button id="update-btn">Update</button>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>Heart Rate</h4>
+                        <p>80 <span>bpm</span></p>
+                    </div>
+                    <div class="metric">
+                        <h4>Body Temperature</h4>
+                        <p>36.5 <span>°C</span></p>
+                    </div>
+                    <div class="metric">
+                        <h4>Glucose</h4>
+                        <p>100 <span>mg/dl</span></p>
+                    </div>
+                </div>
+            </section>
+            <section class="information">
+                <h4>Information:</h4>
+                <ul>
+                    <li><strong>Gender:</strong> Male</li>
+                    <li><strong>Blood Type:</strong> O+ (Positive)</li>
+                    <li><strong>Allergies:</strong> Milk, Penicillin</li>
+                    <li><strong>Diseases:</strong> Diabetes, Blood Disorders</li>
+                    <li><strong>Height:</strong> 1.78m</li>
+                    <li><strong>Weight:</strong> 65 kg</li>
+                    <li><strong>Patient ID:</strong> 208898786</li>
+                    <li><strong>Last Visit:</strong> 25th October 2019</li>
+                </ul>
+            </section>
+            <section class="prescriptions">
+                <h4>Prescriptions</h4>
+                <button id="add-prescription">+ Add a prescription</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prescription</th>
+                            <th>Date</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Heart Diseases</td>
+                            <td>25th October 2019</td>
+                            <td>3 months</td>
+                        </tr>
+                        <tr>
+                            <td>Skin Care</td>
+                            <td>8th August 2019</td>
+                            <td>2 months</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
