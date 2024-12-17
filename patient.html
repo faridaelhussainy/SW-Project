@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Tool - Patient Page</title>
+    <style>
+        /* General page styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #003366; /* Dark blue background for sidebar */
+            color: white;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main container */
+        .main {
+            margin-left: 220px; /* Space for sidebar */
+            padding: 20px;
+        }
+
+        /* Heart Rate Section */
+        .top-section {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f5f7fa; /* Light grayish color */
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .top-section h3 {
+            margin: 0;
+            color: #003366; /* Dark blue */
+        }
+
+        .top-section p {
+            margin: 5px 0;
+        }
+
+        /* Shared Section Styling */
+        .section-background {
+            background-color: #f5f7fa; /* Match top section background */
+            color: #003366; /* Dark blue text */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        /* Prescription Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #003366;
+            color: white;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+                <img src="c:\Users\makany\Desktop\doctor page\SW-Project\dashboardlogo.png" alt="Logo" />
+            </div>
+        <a href="#">Dashboard</a>
+        <a href="#">Appointments</a>
+        <a href="#">Patients</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Top Section -->
+        <div class="top-section">
+            <div>
+                <h3>HEART RATE</h3>
+                <p>- bpm</p>
+            </div>
+            <div>
+                <h3>BODY TEMPERATURE</h3>
+                <p>- °C</p>
+            </div>
+            <div>
+                <h3>GLUCOSE</h3>
+                <p>- mg/dl</p>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="section-background">
+            <h3>INFORMATION:</h3>
+            <p>Gender: -</p>
+            <p>Blood Type: -</p>
+            <p>Allergies: -</p>
+            <p>Diseases: -</p>
+            <p>Height: -</p>
+            <p>Weight: -</p>
+            <p>Patient ID: -</p>
+            <p>Last Visit: -</p>
+        </div>
+
+        <!-- Prescriptions Section -->
+        <div class="section-background">
+            <h3>PRESCRIPTIONS</h3>
+            <button>+ Add a prescription</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prescription</th>
+                        <th>Date</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="patient.js"></script>
+</body>
+</html>
