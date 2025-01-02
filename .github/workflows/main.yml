@@ -26,4 +26,4 @@ jobs:
         run: dotnet build SWproject.sln --configuration Release
 
       - name: Run Tests
-        run: dotnet test Auradent.Tests.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test --configuration Release --no-build --verbosity normal
