@@ -1,29 +1,37 @@
-name: .NET Core CI with xUnit
+name: Test Login Page
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
   pull_request:
-    branches: [master]
+    branches:
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '6.0.x'
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0' # Adjust based on your project
 
-      - name: Install Dependencies
-        run: dotnet restore SWproject.sln  # Specify the path to your .sln file
+    - name: Install Dependencies
+      run: dotnet restore
 
-      - name: Build Project
-        run: dotnet build SWproject.sln --configuration Release
+    - name: Build Solution
+      run: dotnet build --configuration Release
 
-      - name: Run Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+    - name: Start WinAppDriver
+      run: |
+        curl -L -o WinAppDriver.msi https://github.com/microsoft/WinAppDriver/releases/download/v1.2.1/WinAppDriver.msi
+        msiexec /i WinAppDriver.msi /quiet
+        start /B WinAppDriver.exe
+
+    - name: Run Tests
+      run: dotnet test --logger "trx;LogFileName=test-results.trx"
