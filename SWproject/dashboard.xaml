@@ -1,0 +1,92 @@
+﻿<Page x:Class="SWproject.dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SWproject"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="dashboard">
+    <Page.Resources>
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#004e7c" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="5,10" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <!-- Sidebar -->
+        <Grid Background="#004e7c" Width="200" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+            <StackPanel Margin="10">
+                <TextBlock Text="Dashboard" Foreground="White" FontSize="18" FontWeight="Bold" Margin="0,10"/>
+                <Button Content="Dashboard" Style="{StaticResource SidebarButtonStyle}" />
+                <Button Content="Appointment" Style="{StaticResource SidebarButtonStyle}" Click="Button_Click"/>
+                <Button Content="Patients" Style="{StaticResource SidebarButtonStyle}" Click="Button_Click_2" />
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content -->
+        <Grid Margin="200,0,0,0" Background="#f9fbff">
+            <StackPanel Margin="20">
+                <!-- Header -->
+                <TextBlock Text="Good Morning Doctor 💙" FontSize="24" FontWeight="Bold" />
+                <TextBlock Text="You have 12 Patients today" FontSize="16" Foreground="Gray" Margin="0,5"/>
+
+                <!-- Summary Section -->
+                <Grid Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Total Patients Card -->
+                    <Border Background="White" CornerRadius="10" Padding="20" Margin="10" BorderBrush="#e0e0e0" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="Total Patients" FontSize="18" FontWeight="Bold" />
+                            <!-- Total Patients -->
+                            <TextBlock x:Name="TotalPatientsTextBlock" Text="Total Patients: 0" FontSize="14" Foreground="Gray"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Patients Card -->
+                    <Border Background="White" CornerRadius="10" Padding="20" Margin="10" BorderBrush="#e0e0e0" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="Patients Summary" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="New:  | Old: " FontSize="14" Foreground="Gray" />
+                            <!-- New and Old Patient Count -->
+                            <TextBlock x:Name="NewPatientsTextBlock" Text="New: 0" FontSize="14" Foreground="Gray"/>
+                            <TextBlock x:Name="OldPatientsTextBlock" Text="Old: 0" FontSize="14" Foreground="Gray"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Visits Card -->
+                    <Border Background="White" CornerRadius="10" Padding="20" Margin="10" BorderBrush="#e0e0e0" BorderThickness="1" Grid.Column="1">
+                        <StackPanel>
+                            <TextBlock Text="Visits Summary" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="Appointments:  | Cancelled: " FontSize="14" Foreground="Gray" />
+                            <!-- Visits Data -->
+                            <TextBlock x:Name="VisitsTextBlock" Text="Appointments: 0 | Cancelled: 0" FontSize="14" Foreground="Gray"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Requests Section -->
+                <TextBlock Text="Requests" FontSize="18" FontWeight="Bold" Margin="0,20"/>
+                <ListView x:Name="RequestListView" Background="White" BorderBrush="#e0e0e0" BorderThickness="1">
+                    <!-- Dynamic list items will be added here -->
+                </ListView>
+
+            </StackPanel>
+        </Grid>
+
+        <!-- Calendar -->
+        <Grid Margin="700,400,0,0" Background="#f9fbff">
+            <Calendar VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="200"/>
+        </Grid>
+    </Grid>
+</Page>
